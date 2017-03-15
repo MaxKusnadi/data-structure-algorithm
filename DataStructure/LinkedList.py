@@ -29,6 +29,10 @@ class LinkedList(object):
         self.head = None
         self.size = 0
 
+    def add_list(self, *args):
+        for value in (args):
+            self.add(value)
+
     def add(self, item, index=-1):
         self._check_index(index)
 
@@ -136,3 +140,9 @@ class LinkedList(object):
             lst.append(str(curr.get_item()))
             curr = curr.get_next()
         return " ".join(lst)
+
+    def __iter__(self):
+        current = self.head
+        while current:
+            yield current.get_item()
+            current = current.get_next()

@@ -137,3 +137,19 @@ class TestLinkedList(unittest.TestCase):
 
         lst.remove_by_index(2)
         assert(str(lst) == "3 11")
+
+    def test_add_list(self):
+        lsta = LinkedList()
+        lsta.add_list(1, 2, 3, 4, 5)
+        assert(str(lsta) == "1 2 3 4 5")
+
+    def test_iterator(self):
+        lst = LinkedList()
+        lst.add_list(10, 23, 34, 45, 56)
+
+        empty_list = []
+
+        for x in lst:
+            empty_list.append(str(x))
+        result = " ".join(empty_list)
+        assert(result == "10 23 34 45 56")
