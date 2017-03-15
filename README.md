@@ -22,8 +22,8 @@ A collection of data structure and implementations in python
 4. Try to hit 100% coverage
 
 # Implemented List
-Data structures:
-1. Linked List
+Data structures (*Functions*):
+1. Linked List: (*add, remove, remove_by_index, get_size, get, modify*)
 
 # License
 See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
