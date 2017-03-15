@@ -26,7 +26,9 @@ class LinkedList(object):
 
     def __init__(self):
         self.head = None
+        self.size = 0
 
+    # TODO:Add at certain index
     def add(self, item):
         current = self.head
         if current:
@@ -35,6 +37,18 @@ class LinkedList(object):
             current.set_next(Node(item))
         else:
             self.head = Node(item)
+
+    def remove(self, item, index):
+        pass
+
+    def size(self):
+        pass
+
+    def read(self):
+        pass
+
+    def modify(self):
+        pass
 
     def __repr__(self):
         lst = []
