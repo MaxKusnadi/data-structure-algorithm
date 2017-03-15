@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Virtualenv
+Include/
+Lib/
+Scripts/
+tcl/
+*.json
