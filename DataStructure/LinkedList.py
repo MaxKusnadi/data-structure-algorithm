@@ -129,6 +129,7 @@ class LinkedList(object):
         return current.get_item()
 
     def reverse(self):
+        pass
 
     def _reverse_recursion(self, head, _next):
         if not head.get_next():
