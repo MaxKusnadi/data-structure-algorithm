@@ -107,13 +107,16 @@ class TestLinkedList(unittest.TestCase):
         lst.add(20)
         lst.add(30)
 
-        lst.remove(3)
+        a = lst.remove(3)
+        assert(a == 3)
         assert(str(lst) == "5 11 20 30")
 
-        lst.remove(20)
+        a = lst.remove(20)
+        assert(a == 20)
         assert(str(lst) == "5 11 30")
 
-        lst.remove(5)
+        a = lst.remove(5)
+        assert(a == 5)
         assert(str(lst) == "11 30")
 
         self.assertRaises(ValueError, lst.remove, 40)
@@ -129,13 +132,16 @@ class TestLinkedList(unittest.TestCase):
         lst.add(20)
         lst.add(30)
 
-        lst.remove_by_index(0)
+        a = lst.remove_by_index(0)
+        assert(a == 5)
         assert(str(lst) == "3 11 20 30")
 
-        lst.remove_by_index(-1)
+        a = lst.remove_by_index(-1)
+        assert(a == 30)
         assert(str(lst) == "3 11 20")
 
-        lst.remove_by_index(2)
+        a = lst.remove_by_index(2)
+        assert(a == 20)
         assert(str(lst) == "3 11")
 
     def test_add_list(self):
@@ -153,3 +159,16 @@ class TestLinkedList(unittest.TestCase):
             empty_list.append(str(x))
         result = " ".join(empty_list)
         assert(result == "10 23 34 45 56")
+
+    def test_clear(self):
+        lst = LinkedList()
+
+        lst.add(5)
+        lst.add(3)
+        lst.add(11)
+        lst.add(20)
+        lst.add(30)
+
+        lst.clear()
+        assert(lst.get_size() == 0)
+        assert(str(lst) == "")

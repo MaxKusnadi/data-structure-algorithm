@@ -58,6 +58,12 @@ class LinkedList(object):
             self.head = Node(item)
         self.size += 1
 
+    def clear(self):
+        curr = self.head
+        while curr:
+            self.remove(curr.get_item())
+            curr = curr.get_next()
+
     def remove(self, item):
         if self.size == 0:
             raise ValueError("Can't delete an empty list")
@@ -79,6 +85,8 @@ class LinkedList(object):
                 curr = curr.get_next()
         if not is_deleted:
             raise ValueError("Item is not inside the list")
+        else:
+            return curr.get_item()
 
     def remove_by_index(self, index):
         self._check_index(index)
@@ -97,6 +105,7 @@ class LinkedList(object):
         else:
             prev.set_next(current.get_next())
         self.size -= 1
+        return current.get_item()
 
     def get_size(self):
         return self.size
