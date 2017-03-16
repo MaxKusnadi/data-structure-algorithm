@@ -128,6 +128,14 @@ class LinkedList(object):
         current.set_item(item)
         return current.get_item()
 
+    def reverse(self):
+
+    def _reverse_recursion(self, head, _next):
+        if not head.get_next():
+            return head
+        else:
+            _next = head.get_next()
+
     def _is_index_valid(self, index):
         return index > self.size
 

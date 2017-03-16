@@ -162,6 +162,9 @@ class TestLinkedList(unittest.TestCase):
 
     def test_clear(self):
         lst = LinkedList()
+        lst.clear()
+        assert(lst.get_size() == 0)
+        assert(str(lst) == "")
 
         lst.add(5)
         lst.add(3)
